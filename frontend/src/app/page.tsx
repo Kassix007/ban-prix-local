@@ -1,11 +1,20 @@
+'use client';
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 export default function Home() {
+
+    const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`)
+      .then(res => res.json())
+      .then(data => setMessage(data.message));
+  }, []);
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1 className="text-4xl font-bold text-center sm:text-left">
-          Tout prix moris
+          {message}
         </h1>
         <p className="text-lg text-center sm:text-left">
           <code className="bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">
