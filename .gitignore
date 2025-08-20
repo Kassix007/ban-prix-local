@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+backend/venv/Lib/site-packages/pip/__main__.py
+backend/venv/Lib/site-packages/pip/_internal/
+backend/venv/Lib/site-packages/pip-*.dist-info/
+backend/venv/Lib/site-packages/pip-*.egg-info/
+backend/venv/
